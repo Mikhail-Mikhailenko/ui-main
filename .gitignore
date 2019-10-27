@@ -1,5 +1,6 @@
 # Exclude npm files
 node_modules
+dist
 
 # Exclude OSX files
 .DS_Store
