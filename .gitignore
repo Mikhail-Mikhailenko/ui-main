@@ -1,0 +1,9 @@
+# Exclude npm files
+node_modules
+
+# Exclude OSX files
+.DS_Store
+
+# Intellij files
+.idea
+*.iml
