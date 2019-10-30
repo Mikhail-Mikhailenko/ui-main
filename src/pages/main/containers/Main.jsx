@@ -1,20 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import theme from '../../../theme/theme';
 import AppBar from '../components/AppBar';
 
-class Main extends React.Component {
-  componentDidMount() {
+export default function main() {
+  useEffect(() => {
     document.body.style.backgroundImage = theme.main.backgroundImage;
-  }
+  });
 
-  render() {
-    return (
-      <div>
-        <AppBar />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <AppBar />
+    </div>
+  );
 }
-
-export default Main;

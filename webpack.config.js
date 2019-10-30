@@ -8,7 +8,7 @@ let conf = {
     filename: 'main.js'
   },
   devServer: {
-    overlay: true,
+   // overlay: true,
   },
   module: {
     rules: [
