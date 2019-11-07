@@ -2,7 +2,7 @@ let path = require('path');
 const HWP = require('html-webpack-plugin');
 
 let conf = {
-  entry: './src/index.jsx',
+  entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'main.js'
@@ -13,9 +13,8 @@ let conf = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        use: ['babel-loader', 'eslint-loader'],
-        exclude: '/node_modules/'
+        test: /\.tsx?$/,
+        use: ['awesome-typescript-loader', 'eslint-loader'],
       }
     ]
   },
@@ -25,9 +24,9 @@ let conf = {
     )
   ],
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.ts', '.tsx', '.js', '.json'],
   },
-  devtool: "eval-sourcemap"
+  devtool: "eval-sourcemap",
 };
 
 module.exports = (env, options) => {

@@ -1,8 +1,5 @@
 {
-  "parser": "babel-eslint",
-  "extends": [
-    "airbnb"
-  ],
+  "extends": ["airbnb-typescript"],
   "rules": {
     "linebreak-style": 0
   },

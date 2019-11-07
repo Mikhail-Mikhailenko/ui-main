@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import * as React from 'react';
 
-import theme from '../../../theme/theme';
+import theme from '../../../styles/theme';
 import AppBar from '../components/AppBar';
 
 export default function main() {
-  useEffect(() => {
+  React.useEffect(() => {
     document.body.style.backgroundImage = theme.main.backgroundImage;
   });
 
