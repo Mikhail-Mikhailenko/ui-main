@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 
-import theme from '../../../styles/theme';
+import HorizontalPanelWithIcons from '../components/HeaderPanel';
 import SearchAppBar from '../components/SearchAppBar';
+import theme from '../../../styles/theme';
 
 export default function main() {
   useEffect(() => {
@@ -11,6 +12,7 @@ export default function main() {
   return (
     <div>
       <SearchAppBar />
+      <HorizontalPanelWithIcons />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeOptions, Theme } from '@material-ui/core/styles/createMuiTheme';
+import { lightGreen } from '@material-ui/core/colors';
 
 declare module '@material-ui/core/styles/createMuiTheme' {
   interface Theme {
@@ -9,14 +10,20 @@ declare module '@material-ui/core/styles/createMuiTheme' {
     appBar: {
       backgroundImage: string;
     },
+    commonColors: {
+      green: string,
+    },
   }
   interface ThemeOptions {
-    main: {
+    main?: {
       backgroundImage?: string;
-    }
+    },
     appBar?: {
       backgroundImage?: string;
-    }
+    },
+    commonColors?: {
+      green: string,
+    },
   }
 }
 
@@ -32,5 +39,8 @@ export default createTheme({
   },
   appBar: {
     backgroundImage: 'linear-gradient(to right, #131314, #181819, #1c1c1d, #202122, #252627, #2b2c2d, #303132, #363738, #3f3f40, #474848, #505051, #595959)',
+  },
+  commonColors: {
+    green: lightGreen[600],
   },
 });

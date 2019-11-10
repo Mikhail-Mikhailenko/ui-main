@@ -5,6 +5,7 @@
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "module": "commonjs",
     "jsx": "react",
     "preserveConstEnums": true,
     "removeComments": true,
