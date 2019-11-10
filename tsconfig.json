@@ -4,14 +4,12 @@
     "noImplicitThis": true,
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "jsx": "react",
-    "module": "commonjs",
-    "outDir": "./build/",
     "preserveConstEnums": true,
     "removeComments": true,
     "sourceMap": true,
-    "noImplicitAny": true,
-    "target": "es5"
+    "noImplicitAny": true
   },
   "include": [
     "./src/**/*"

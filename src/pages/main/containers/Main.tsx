@@ -1,16 +1,16 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 
 import theme from '../../../styles/theme';
-import AppBar from '../components/AppBar';
+import SearchAppBar from '../components/SearchAppBar';
 
 export default function main() {
-  React.useEffect(() => {
+  useEffect(() => {
     document.body.style.backgroundImage = theme.main.backgroundImage;
   });
 
   return (
     <div>
-      <AppBar />
+      <SearchAppBar />
     </div>
   );
 }
