@@ -1,16 +1,22 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
-import ButtonBase from '@material-ui/core/ButtonBase';
 import Grid from '@material-ui/core/Grid';
 import Toolbar from '@material-ui/core/Toolbar';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 
 import SearchResultModal from './SearchResultModal';
+import PopperFilms from './PopperFilms';
+import PopperSeries from './PopperSeries';
+import PopperCartoons from './PopperCartoons';
+import PopperCollections from './PopperCollections';
+import PopperTrailers from './PopperTrailers';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   root: {
     flexGrow: 1,
+  },
+  logo: {
+    color: theme.commonColors.green,
   },
   appBar: {
     backgroundImage: theme.appBar.backgroundImage,
@@ -50,8 +56,8 @@ export default function searchAppBar() {
           >
             <Grid item>
               <div className={classes.title}>
-                <h2>
-                  GOOD BAD CAT
+                <h2 className={classes.logo}>
+                  Some Logo
                 </h2>
               </div>
             </Grid>
@@ -66,39 +72,19 @@ export default function searchAppBar() {
                   spacing={2}
                 >
                   <Grid item>
-                    <ButtonBase className={classes.titleButton}>
-                      <Typography variant="subtitle2">
-                        Фильмы
-                      </Typography>
-                    </ButtonBase>
+                    <PopperFilms />
                   </Grid>
                   <Grid item>
-                    <ButtonBase className={classes.titleButton}>
-                      <Typography variant="subtitle2">
-                        Сериалы
-                      </Typography>
-                    </ButtonBase>
+                    <PopperSeries />
                   </Grid>
                   <Grid item>
-                    <ButtonBase className={classes.titleButton}>
-                      <Typography variant="subtitle2">
-                        Мультфильмы
-                      </Typography>
-                    </ButtonBase>
+                    <PopperCartoons />
                   </Grid>
                   <Grid item>
-                    <ButtonBase className={classes.titleButton}>
-                      <Typography variant="subtitle2">
-                        Подборки
-                      </Typography>
-                    </ButtonBase>
+                    <PopperCollections />
                   </Grid>
                   <Grid item>
-                    <ButtonBase className={classes.titleButton}>
-                      <Typography variant="subtitle2">
-                        Трейлеры
-                      </Typography>
-                    </ButtonBase>
+                    <PopperTrailers />
                   </Grid>
                 </Grid>
               </div>

@@ -11,7 +11,7 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   root: {
-    paddingTop: theme.spacing(9),
+    paddingTop: theme.spacing(10),
   },
   card: {
     width: 140,
