@@ -3,15 +3,15 @@ import Box from '@material-ui/core/Box';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
+import Grow from '@material-ui/core/Grow';
 import InputBase from '@material-ui/core/InputBase';
 import ListItem from '@material-ui/core/ListItem';
 import Paper from '@material-ui/core/Paper';
 import SearchIcon from '@material-ui/icons/Search';
 import Typography from '@material-ui/core/Typography';
+import useMediaQuery from '@material-ui/core/useMediaQuery/useMediaQuery';
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import { fade } from '@material-ui/core/styles';
-import Grow from '@material-ui/core/Grow';
-
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   search: {
@@ -63,6 +63,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 }));
 
 export default function searchResultModal() {
+  const matches = useMediaQuery('(min-width:900px)');
   const classes = useStyles();
   const [searchText, setSearchText] = useState<String>('');
   return (
@@ -90,6 +91,7 @@ export default function searchResultModal() {
           <Box
             position="absolute"
             zIndex="modal"
+            right={matches ? '2.5%' : '1%'}
           >
             <Paper elevation={8} className={classes.searchPaper}>
               <ListItem button className={classes.hoverText}>

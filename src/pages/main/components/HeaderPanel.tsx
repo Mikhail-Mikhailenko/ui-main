@@ -29,6 +29,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
   icon: {
     fontSize: theme.spacing(8),
     color: theme.palette.common.white,
+    '&:hover': {
+      color: theme.commonColors.green,
+    },
   },
 }));
 
@@ -57,28 +60,6 @@ export default function headerPanel() {
               src="https://upload.wikimedia.org/wikipedia/ru/thumb/4/4c/Once_Upon_a_Time_in_Hollywood.jpg/269px-Once_Upon_a_Time_in_Hollywood.jpg"
               alt="Contemplative Reptile"
             />
-            <Box
-              position="absolute"
-              zIndex="modal"
-            >
-              <div className={classes.cardBox}>
-                <Grid
-                  container
-                  direction="column"
-                  justify="space-between"
-                  alignItems="center"
-                >
-                  <Grid item>
-                    <PlayCircleFilledIcon />
-                  </Grid>
-                  <Grid item>
-                    <Typography>
-                      Однажды в голивуде
-                    </Typography>
-                  </Grid>
-                </Grid>
-              </div>
-            </Box>
           </ButtonBase>
         </Grid>
         <Grid item>

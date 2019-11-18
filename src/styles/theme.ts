@@ -1,6 +1,6 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeOptions, Theme } from '@material-ui/core/styles/createMuiTheme';
-import { lightGreen } from '@material-ui/core/colors';
+import { lightGreen, grey } from '@material-ui/core/colors';
 
 declare module '@material-ui/core/styles/createMuiTheme' {
   interface Theme {
@@ -12,6 +12,7 @@ declare module '@material-ui/core/styles/createMuiTheme' {
     },
     commonColors: {
       green: string,
+      grey: string,
     },
   }
   interface ThemeOptions {
@@ -23,6 +24,7 @@ declare module '@material-ui/core/styles/createMuiTheme' {
     },
     commonColors?: {
       green: string,
+      grey: string,
     },
   }
 }
@@ -42,5 +44,6 @@ export default createTheme({
   },
   commonColors: {
     green: lightGreen[600],
+    grey: grey[300],
   },
 });
