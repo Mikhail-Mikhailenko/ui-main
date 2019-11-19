@@ -57,7 +57,7 @@ export default function popperCollections() {
       >
         <Fade in={open} timeout={350}>
           <Paper>
-            <Typography>The content of the Popover.</Typography>
+            <Typography>In progress...</Typography>
           </Paper>
         </Fade>
       </Popper>

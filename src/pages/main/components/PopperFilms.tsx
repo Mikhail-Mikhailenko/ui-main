@@ -24,18 +24,18 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     '&:hover': {
       color: theme.commonColors.green,
     },
-    cursor: 'pointer'
+    cursor: 'pointer',
   },
   rightPanel: {
     background: theme.commonColors.grey,
-    height: '100%'
+    height: '100%',
   },
   leftPanel: {
     padding: theme.spacing(1),
   },
   centerPanel: {
     paddingTop: theme.spacing(1),
-  }
+  },
 }));
 
 export default function popperFilms() {

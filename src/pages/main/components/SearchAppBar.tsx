@@ -11,7 +11,7 @@ import PopperCartoons from './PopperCartoons';
 import PopperCollections from './PopperCollections';
 import PopperFilms from './PopperFilms';
 import PopperSeries from './PopperSeries';
-import PopperTrailers from './PopperTrailers';
+import ButtonTrailers from './ButtonTrailers';
 import SearchResultModal from './SearchResultModal';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -92,7 +92,7 @@ export default function searchAppBar() {
                       <PopperCollections />
                     </Grid>
                     <Grid item>
-                      <PopperTrailers />
+                      <ButtonTrailers />
                     </Grid>
                   </Grid>
                 </div>
