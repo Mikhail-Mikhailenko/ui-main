@@ -2,14 +2,29 @@ import React, { useState } from 'react';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
+import Popper from '@material-ui/core/Popper';
+import Paper from '@material-ui/core/Paper';
+import Fade from '@material-ui/core/Fade';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   titleButton: {
+    transition: '0.8s',
+    '&:hover': {
+      color: theme.commonColors.green,
+      transition: '0.5s',
+    },
+  },
+  openTitleButton: {
+    transition: '0.8s',
     color: theme.commonColors.green,
+  },
+  popper: {
+    position: 'absolute',
+    zIndex: 1101,
   },
 }));
 
-export default function buttonTrailers() {
+export default function popperCollections() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
@@ -22,6 +37,7 @@ export default function buttonTrailers() {
   };
 
   const open = Boolean(anchorEl);
+  const id = open ? 'collections-popper' : undefined;
 
   return (
     <div
@@ -29,14 +45,30 @@ export default function buttonTrailers() {
       onBlur={handleClose}
     >
       <ButtonBase
-        className={open ? classes.titleButton : undefined}
+        aria-describedby={id}
+        className={open ? classes.openTitleButton : classes.titleButton}
         onMouseOver={handleOpen}
         onFocus={handleOpen}
       >
         <Typography variant={open ? 'subtitle1' : 'subtitle2'}>
-          Трейлеры
+          Подборки
         </Typography>
       </ButtonBase>
+      <Popper
+        id={id}
+        open={open}
+        anchorEl={anchorEl}
+        placement="bottom"
+        disablePortal={false}
+        className={classes.popper}
+        transition
+      >
+        <Fade in={open} timeout={350}>
+          <Paper>
+            <Typography>In progress...</Typography>
+          </Paper>
+        </Fade>
+      </Popper>
     </div>
   );
 }

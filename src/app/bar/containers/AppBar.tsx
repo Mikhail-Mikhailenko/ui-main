@@ -7,12 +7,12 @@ import Toolbar from '@material-ui/core/Toolbar';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 
-import PopperCartoons from './PopperCartoons';
-import PopperCollections from './PopperCollections';
-import PopperFilms from './PopperFilms';
-import PopperSeries from './PopperSeries';
-import ButtonTrailers from './ButtonTrailers';
-import SearchResultModal from './SearchResultModal';
+import PopperCartoons from '../components/PopperCartoons';
+import PopperCollections from '../components/PopperCollections';
+import PopperFilms from '../components/PopperFilms';
+import PopperSeries from '../components/PopperSeries';
+import ButtonTrailers from '../components/ButtonTrailers';
+import SearchResultModal from '../components/SearchResultModal';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   root: {
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
   },
 }));
 
-export default function searchAppBar() {
+export default function appBar() {
   const matches = useMediaQuery('(min-width:900px)');
   const classes = useStyles();
   return (

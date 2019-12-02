@@ -31,6 +31,7 @@
     "@material-ui/lab": "^4.0.0-alpha.30",
     "@material-ui/styles": "^4.5.0",
     "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react-dom": "^16.11.0",
+    "react-spring": "^8.0.27"
   }
 }

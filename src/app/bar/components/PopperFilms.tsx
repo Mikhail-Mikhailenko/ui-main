@@ -8,9 +8,18 @@ import Fade from '@material-ui/core/Fade';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   titleButton: {
+    transition: '0.8s',
+    '&:hover': {
+      color: theme.commonColors.green,
+      transition: '0.5s',
+    },
+  },
+  openTitleButton: {
+    transition: '0.8s',
     color: theme.commonColors.green,
   },
   popper: {
@@ -38,6 +47,41 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
   },
 }));
 
+const films = [
+  'Аниме',
+  'Биографический',
+  'Боевик',
+  'Вестерн',
+  'Военный',
+  'Детектив',
+  'Детский',
+  'Документальный',
+  'Драма',
+  'Исторический',
+  'Кинокомикс',
+  'Комедия',
+  'Концерт',
+  'Короткометражный',
+  'Криминал',
+  'Мелодрама',
+  'Мистика',
+  'Музыка',
+  'Мультфильм',
+  'Мюзикл',
+  'Научный',
+  'Приключения',
+  'Реалити-шоу',
+  'Семейный',
+  'Спорт',
+  'Ток-шоу',
+  'Триллер',
+  'Ужасы',
+  'Фантастика',
+  'Фильм-нуар',
+  'Фэнтези',
+  'Эротика',
+];
+
 export default function popperFilms() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -60,7 +104,7 @@ export default function popperFilms() {
     >
       <ButtonBase
         aria-describedby={id}
-        className={open ? classes.titleButton : undefined}
+        className={open ? classes.openTitleButton : classes.titleButton}
         onMouseOver={handleOpen}
         onFocus={handleOpen}
       >
@@ -81,40 +125,22 @@ export default function popperFilms() {
           <Paper className={classes.paper}>
             <Grid container>
               <Grid item xs={5} className={classes.leftPanel}>
-                <Typography className={classes.button}>Аниме</Typography>
-                <Typography className={classes.button}>Биографический</Typography>
-                <Typography className={classes.button}>Боевик</Typography>
-                <Typography className={classes.button}>Вестерн</Typography>
-                <Typography className={classes.button}>Военный</Typography>
-                <Typography className={classes.button}>Детектив</Typography>
-                <Typography className={classes.button}>Детский</Typography>
-                <Typography className={classes.button}>Документальный</Typography>
-                <Typography className={classes.button}>Драма</Typography>
-                <Typography className={classes.button}>Исторический</Typography>
-                <Typography className={classes.button}>Кинокомикс</Typography>
-                <Typography className={classes.button}>Комедия</Typography>
-                <Typography className={classes.button}>Концерт</Typography>
-                <Typography className={classes.button}>Короткометражный</Typography>
-                <Typography className={classes.button}>Криминал</Typography>
-                <Typography className={classes.button}>Мелодрама</Typography>
+                {films.slice(0, films.length / 2).map((film) => (
+                  <Typography className={classes.button}>
+                    <Box fontStyle="italic">
+                      {film}
+                    </Box>
+                  </Typography>
+                ))}
               </Grid>
               <Grid item xs={3} className={classes.centerPanel}>
-                <Typography className={classes.button}>Мистика</Typography>
-                <Typography className={classes.button}>Музыка</Typography>
-                <Typography className={classes.button}>Мультфильм</Typography>
-                <Typography className={classes.button}>Мюзикл</Typography>
-                <Typography className={classes.button}>Научный</Typography>
-                <Typography className={classes.button}>Приключения</Typography>
-                <Typography className={classes.button}>Реалити-шоу</Typography>
-                <Typography className={classes.button}>Семейный</Typography>
-                <Typography className={classes.button}>Спорт</Typography>
-                <Typography className={classes.button}>Ток-шоу</Typography>
-                <Typography className={classes.button}>Триллер</Typography>
-                <Typography className={classes.button}>Ужасы</Typography>
-                <Typography className={classes.button}>Фантастика</Typography>
-                <Typography className={classes.button}>Фильм-нуар</Typography>
-                <Typography className={classes.button}>Фэнтези</Typography>
-                <Typography className={classes.button}>Эротика</Typography>
+                {films.slice(films.length / 2, films.length).map((film) => (
+                  <Typography className={classes.button}>
+                    <Box fontStyle="italic">
+                      {film}
+                    </Box>
+                  </Typography>
+                ))}
               </Grid>
               <Grid item xs={4}>
                 <div className={classes.rightPanel}>
