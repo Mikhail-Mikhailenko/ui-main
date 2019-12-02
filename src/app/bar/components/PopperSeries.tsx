@@ -9,6 +9,7 @@ import Popper from '@material-ui/core/Popper';
 import Typography from '@material-ui/core/Typography';
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
+import TextButton from './TextButton';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   titleButton: {
@@ -128,7 +129,7 @@ export default function popperSeries() {
                 {films.slice(0, films.length / 2).map((film) => (
                   <Typography className={classes.button}>
                     <Box fontStyle="italic">
-                      {film}
+                      <TextButton text={film} />
                     </Box>
                   </Typography>
                 ))}
@@ -137,7 +138,7 @@ export default function popperSeries() {
                 {films.slice(films.length / 2, films.length).map((film) => (
                   <Typography className={classes.button}>
                     <Box fontStyle="italic">
-                      {film}
+                      <TextButton text={film} />
                     </Box>
                   </Typography>
                 ))}

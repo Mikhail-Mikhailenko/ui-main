@@ -9,6 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 import Box from '@material-ui/core/Box';
+import TextButton from './TextButton';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   titleButton: {
@@ -128,7 +129,7 @@ export default function popperCartoons() {
                 {films.slice(0, films.length / 2).map((film) => (
                   <Typography className={classes.button}>
                     <Box fontStyle="italic">
-                      {film}
+                      <TextButton text={film} />
                     </Box>
                   </Typography>
                 ))}
@@ -137,7 +138,7 @@ export default function popperCartoons() {
                 {films.slice(films.length / 2, films.length).map((film) => (
                   <Typography className={classes.button}>
                     <Box fontStyle="italic">
-                      {film}
+                      <TextButton text={film} />
                     </Box>
                   </Typography>
                 ))}
